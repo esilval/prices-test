@@ -1,0 +1,21 @@
+application:
+  name: prices
+
+server:
+  servlet:
+    context-path: /api/v1/prices
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+      stocks:
+        connectTimeout: 5000
+        readTimeout: 5000
+prices:
+  stocks:
+    api:
+      name: stocks
+      uri: https://jsonmock.hackerrank.com/api/stocks/
